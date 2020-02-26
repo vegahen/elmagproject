@@ -25,7 +25,7 @@ class Particle:
     def __init__(self, m, c, x, y, z, px, py, pz):
         self.m = np.float64(m)
         self.q = np.float64(c)
-        self.x = Coordinate(x, y, z)
+        self.x = Position(x, y, z)
         self.p = Momentum(px,py, pz)
     def print(self):
         print("x: ({0:.2e} {8}, {1:.2e} {8}, {2:.2e} {8})\nv: ({3:.2e} {9}, \

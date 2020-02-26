@@ -8,11 +8,3 @@ B_0 = 3.12e-5               # Earth's magnetic field at the equator [T]
 
 mdip = - B_0/µ_0*4*np.pi*r_e**3     # Earth's magnetic dipole moment [A m^2]
 kdip = - B_0*r_e**3                 # µ_0 m / 4pi
-
-print("{0:.2e}".format(mdip))
-print("{0:.2e}".format(kdip))
-
-
-
-#c_m = -B_0*r_e**3                 # Constant µ_0 m / 4pi
-#print("{0:.2e}".format(c))
