@@ -14,7 +14,9 @@ def B(x, y, z):
     return Field(B_x(x, y, z, den), B_y(x, y, z, den), B_z(x, y, z, den))
 B_uni = lambda x, y, z : Field(0, 0, k / B_den(r_e, 0, 0) * (-r_e**2))
 
-def plotfield(field, arrows, scale, earth):
+
+def plotfield(field, arrows, scale, earth, intrpt):
+    i = 0
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     coords = np.linspace(-1.7*r_e, 1.7*r_e, arrows)
@@ -25,5 +27,6 @@ def plotfield(field, arrows, scale, earth):
                     continue
                 bf = field(x, y, z)
                 ax.quiver(x, y, z, bf.x*scale, bf.y*scale, bf.z*scale)
-
-plotfield(B, 7, 1e11, True)
+                if i == intrpt:
+                    plt.show()
+                i += 1
