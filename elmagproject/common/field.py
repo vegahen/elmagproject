@@ -25,3 +25,5 @@ def plotfield(field, arrows, scale, earth):
                     continue
                 bf = field(x, y, z)
                 ax.quiver(x, y, z, bf.x*scale, bf.y*scale, bf.z*scale)
+
+plotfield(B, 7, 1e11, True)

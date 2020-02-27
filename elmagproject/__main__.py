@@ -2,8 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-from common.field import B, Coordinate, Momentum, Particle, Field, m_e, q_e, \
+from common.field import B, Momentum, Field, m_e, q_e, \
     k, r_e, B_uni, plotfield
+from common.particle import Coordinate, Particle
 
 x0 = Coordinate(100, 200, 300)      # Corner of a cube with incoming particles
 
