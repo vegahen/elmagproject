@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-from common.particle import Coordinate, Momentum, Particle, Field
-from common.constants import m_e, q_e, kdip as k, r_e
+from common.particle import Field
+from common.constants import r_e, kdip as k
 
 B_den = lambda x, y, z : np.sqrt(x**2 + y**2 + z**2)**5
 B_x = lambda x, y, z, den: k / den * 3 * x * z
@@ -30,3 +30,7 @@ def plotfield(field, arrows, scale, earth, intrpt):
                 if i == intrpt:
                     plt.show()
                 i += 1
+    plt.show()
+
+
+plotfield(B, 7, 1e11, True, -1)
