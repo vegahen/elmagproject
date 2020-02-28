@@ -12,8 +12,8 @@ def getB(x, y, z):
     return Field(B_x(x, y, z, den), B_y(x, y, z, den), B_z(x, y, z, den))
 getB_uni = lambda x, y, z : Field(0, 0, k / B_den(r_e, 0, 0) * (-r_e**2))
 
-def plotfield(field, ax, arrows, scale, earth):
-    coords = np.linspace(-1.7*r_e, 1.7*r_e, arrows)
+def plotfield(field, ax, arrows, scale, dist, earth):
+    coords = np.linspace(-dist/2, dist/2, arrows)
     for x in coords:
         for y in coords:
             for z in coords:
