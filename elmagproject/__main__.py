@@ -46,31 +46,29 @@ plt.show()
 
 
 
-fig = plt.figure()
+fig = plt.figure(figsize=plt.figaspect(0.5)*1.5)
 ax = fig.add_subplot(111, projection='3d')
-plotfield(getB, ax, 7, 1e11, 3.4*r_e, True)
+#plotfield(getB, ax, 7, 1e11, 3.4*r_e, True)
 
 n = 1
 particles = np.empty(n**2, dtype=Particle)
 locs = np.linspace(-r_e, r_e, n)
 locs = np.array([r_e])
 i = 0
-colors = np.array(['red', 'yellow', 'green', 'blue', 'orange'])
+colors = np.array(['red'])#, 'yellow', 'green', 'blue', 'orange'])
 
 for y in locs:
     for z in locs:
-        particles[i] = Particle(4*m_p, q_e, -3*r_e, y, z, 5e5, 0, 0)
+        particles[i] = Particle(4*m_p, q_e, -100*r_e, y, z, 0, c, c)
         i += 1
 particles[0].print()
 for elem in particles:
     print("once")
     for cols in colors:
-        U = elem.move(getB, 3e-3, 10000)
+        U = elem.move(getB_uni, 1e-5, 8300)
         ax.plot(U[:, 0], U[:, 2], U[:, 4], c=cols)
 
-ax.set_xlim3d(-1.7*r_e, 1.7*r_e)
-ax.set_ylim3d(-1.7*r_e, 1.7*r_e)
-ax.set_zlim3d(-1.7*r_e, 1.7*r_e)
+#ax.set_xlim3d(-1.7*r_e, 1.7*r_e)
+#ax.set_ylim3d(-1.7*r_e, 1.7*r_e)
+#ax.set_zlim3d(-1.7*r_e, 1.7*r_e)
 plt.show()
-print(5e5)
-print(c*.01)
