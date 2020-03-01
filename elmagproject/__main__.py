@@ -12,7 +12,7 @@ from common.field import getB, getB_uni, plotfield
 x0 = Position(100, 200, 300)      # Corner of a cube with incoming particles
 
 
-myPart = Particle(1e3*m_e, q_e, 0*r_e, 150, 0, 1e6, 0, 0)
+myPart = Particle(1e2*m_e, q_e, 0*r_e, 150, 0, 1e7, 0, 0)
 
 earth = False
 N = int(1.2e5)
