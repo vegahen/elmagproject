@@ -1,2 +1,7 @@
-__pycache__/
-common/__pycache__/
+.ipynb_checkpoints
+elmagproject/__pycache__
+elmagproject/common/__pycache__
+figure0.pdf
+figure1.pdf
+figure2.pdf
+uniform.pdf
