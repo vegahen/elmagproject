@@ -4,17 +4,19 @@ from scipy.integrate import simps
 from mpl_toolkits.mplot3d import Axes3D
 
 x = np.linspace(0, 1, 1001)
-f = lambda x : 0*x + 1
+f = lambda x : x*(1-x)
 y = f(x)
+
+
 
 plt.plot(x, f(x))
 plt.show()
-
+n=2
 ns = np.linspace(1, 100, 100, dtype=int)
 cs = np.zeros(100)
 for n in ns:
     cs[n-1] = 2/np.sinh(n*np.pi)*simps(y*np.sin(n*np.pi*x), dx=x[1]-x[0])
-
+cs[1]
 series = np.zeros(1001)
 
 # Endre rangen for å endre hvor mange ledd du har i rekka

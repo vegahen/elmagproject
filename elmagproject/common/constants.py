@@ -10,5 +10,3 @@ B_0 = 3.05e-5               # Earth's magnetic field at the equator [T]
 
 mdip = - B_0/µ_0*4*np.pi*r_e**3     # Earth's magnetic dipole moment [A m^2]
 kdip = - B_0*r_e**3                 # µ_0 m / 4pi [T m^3]
-
-mdip

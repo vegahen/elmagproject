@@ -30,15 +30,11 @@ class Particle:
         self.q = np.float64(q)
         self.x = Position(x, y, z)
         self.v = Velocity(vx, vy, vz)
-        self.exists = True
 
     def print(self):
         print("x: ({0:.2e} {8}, {1:.2e} {8}, {2:.2e} {8})\nv: ({3:.2e} {9}, \
 {4:.2e} {9}, {5:.2e} {9})\nm: {6:.2e} kg\nq: {7:.2e} C".format(self.x.x, \
 self.x.y, self.x.z, self.v.x, self.v.y, self.v.z, self.m, self.q, 'm', 'm/s'))
-
-    def annihilate(self):
-        self.exists = False
 
     def move(self, B, dt, N):
         c = self.q/self.m
@@ -50,7 +46,5 @@ self.x.y, self.x.z, self.v.x, self.v.y, self.v.z, self.m, self.q, 'm', 'm/s'))
         self.v.x = U[N-1][1]
         self.v.y = U[N-1][3]
         self.v.z = U[N-1][5]
-        if (self.x.x**2 + self.x.y**2 + self.x.z**2 < r_e**2):
-            self.annihilate()
         return U
         
